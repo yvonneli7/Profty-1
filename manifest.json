@@ -1,0 +1,33 @@
+{
+	"name": "nwHacks",
+	"version": "1.0",
+	"manifest_version":2,
+
+
+	// Description in webstore
+	"description": "This is where we want to write our description.",
+	"icons":{
+		"128": "icon.png"
+	},
+
+
+
+	// Type of action: 
+	"browser_action": {
+		"default_title": "TITLE", // hover words
+		"default_icon": "icon.png",
+		"default_popup" : "Popup.html"
+	},
+
+	// intent of app, what you will access from the user
+	"permissions": [
+		"http://*/*", "https://*/*"
+	],
+	"content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["profanity.js"]
+    }
+  ]
+} 
+
