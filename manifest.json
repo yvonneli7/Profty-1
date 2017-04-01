@@ -1,33 +1,34 @@
+
 {
-	"name": "nwHacks",
-	"version": "1.0",
-	"manifest_version":2,
-
-
-	// Description in webstore
-	"description": "This is where we want to write our description.",
-	"icons":{
-		"128": "icon.png"
-	},
-
-
-
-	// Type of action: 
-	"browser_action": {
-		"default_title": "TITLE", // hover words
-		"default_icon": "icon.png",
-		"default_popup" : "Popup.html"
-	},
-
-	// intent of app, what you will access from the user
-	"permissions": [
-		"http://*/*", "https://*/*"
-	],
-	"content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["profanity.js"]
+  "name": "Profty",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A chrome extension that targets cyberbullying",
+  "icons":{
+    "128": "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Profty",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "http://*/*", "https://*/*",
+    "activeTab"
+  ],
+  "content_scripts": [
+   {
+        "matches": ["http://*/*", "https://*/*"],
+      	"js": ["profanity.js"]
     }
-  ]
-} 
+  ],
+  "web_accessible_resources": [
+        "images/emoji/*.png"
+    ]
+}
 
